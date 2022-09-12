@@ -55,7 +55,7 @@ public class PaticipantServiceImpl implements StcService<Participant, Long> {
 		existingParticipant.setNom(participant.getNom());
 		existingParticipant.setPrenom(participant.getPrenom());
 		existingParticipant.setEmail(participant.getEmail());
-		existingParticipant.setLogin(participant.getLogin());
+		existingParticipant.setUsername(participant.getUsername());
 		existingParticipant.setPassword(participant.getPassword());
 		existingParticipant.setTelephone(participant.getTelephone());
 		existingParticipant.setStructure(participant.getStructure());

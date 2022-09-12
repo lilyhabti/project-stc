@@ -55,7 +55,7 @@ public class ResponsableServiceImpl implements StcService<Responsable, Long> {
 		existingResponsable.setNom(responsable.getNom());
 		existingResponsable.setPrenom(responsable.getPrenom());
 		existingResponsable.setEmail(responsable.getEmail());
-		existingResponsable.setLogin(responsable.getLogin());
+		existingResponsable.setUsername(responsable.getUsername());
 		existingResponsable.setPassword(responsable.getPassword());
 		existingResponsable.setTelephone(responsable.getTelephone());
 		existingResponsable.setEtat(responsable.getEtat());

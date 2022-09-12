@@ -10,9 +10,11 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.stc.gestion.entities.Administrateur;
 import com.stc.gestion.entities.AppRole;
 import com.stc.gestion.entities.AppUser;
 import com.stc.gestion.service.AccountService;
+import com.stc.gestion.service.StcService;
 
 @SpringBootApplication
 @EnableGlobalMethodSecurity(prePostEnabled = true,securedEnabled = true)
@@ -29,7 +31,7 @@ public class StcProjectApplication {
 	}
 	
 	@Bean
-	CommandLineRunner start(AccountService accountService) {
+	CommandLineRunner start(AccountService accountService, StcService<Administrateur, Long> adminService) {
 		
 		return args -> {
 			accountService.addNewRole(new AppRole(null,"ADMIN"));
@@ -37,22 +39,15 @@ public class StcProjectApplication {
 			accountService.addNewRole(new AppRole(null,"PARTICIPANT"));
 			
 			
-			accountService.addNewUser(new AppUser(null,"elhabti","fatiha","Lily","12345","fatiha@gmail.com","1234566",new ArrayList<>()));
+//			accountService.addNewUser(new AppUser(null,"elhabti","fatiha","Lily","12345","fatiha@gmail.com","1234566",new ArrayList<>()));
 			
 			
-//			adminService.save(new Administrateur(null,"EL HABTI","Fatiha","Red","12345","elhabtifatiha08@gmail.com","+21267584936","active"));
-//			
-//			accountService.addNewUser(new AppUser(null,"Lily","12345",new ArrayList<>()));
-//			accountService.addNewUser(new AppUser(null,"Red","12345",new ArrayList<>()));
-//			accountService.addNewUser(new AppUser(null,"Sunshine","12345",new ArrayList<>()));
-//			accountService.addNewUser(new AppUser(null,"Princess","12345",new ArrayList<>()));
-//			accountService.addNewUser(new AppUser(null,"Ryle","12345",new ArrayList<>()));
-//			accountService.addNewUser(new AppUser(null,"Joshy","12345",new ArrayList<>()));
-//			accountService.addNewUser(new AppUser(null,"Alex","12345",new ArrayList<>()));
+			adminService.save(new Administrateur(null,"EL HABTI","Fatiha","Red","12345","elhabtifatiha08@gmail.com","+21267584936",new ArrayList<>(),"active"));
+
 //			
 //			accountService.addRoleToUser("Lily", "ADMIN");
 //			accountService.addRoleToUser("Lily", "USER");
-//			accountService.addRoleToUser("Red", "ADMIN");
+			accountService.addRoleToUser("Red", "ADMIN");
 //			accountService.addRoleToUser("Sunshine", "USER");
 //			accountService.addRoleToUser("Princess", "COSTUMOR_MANAGER");
 //			accountService.addRoleToUser("Ryle", "PRODUCT_MANAGER");

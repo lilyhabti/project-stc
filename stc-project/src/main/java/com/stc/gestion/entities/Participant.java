@@ -26,4 +26,13 @@ public class Participant extends AppUser {
 	@ManyToMany(mappedBy="participants")
 //	@JsonIgnore
 	private Collection<Activite> activities = new ArrayList<>();
+
+	public Participant(Long ID_User, String nom, String prenom, String username, String password, String email,
+			String telephone, Collection<AppRole> appRoles, String domaine, String structure,
+			Collection<Activite> activities) {
+		super(ID_User, nom, prenom, username, password, email, telephone, appRoles);
+		this.domaine = domaine;
+		this.structure = structure;
+		this.activities = activities;
+	}
 }

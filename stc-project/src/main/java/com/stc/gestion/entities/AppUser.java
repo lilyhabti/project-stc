@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,12 +31,12 @@ public class AppUser {
 	private Long ID_User;
 	private String nom;
 	private String prenom;
-	private String login;
+	private String username;
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
 	private String email;
 	private String telephone;
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	private Collection<AppRole> appRoles = new ArrayList<>() ;
 	
 }

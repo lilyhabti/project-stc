@@ -6,6 +6,6 @@ import com.stc.gestion.entities.AppUser;
 
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 	
-	AppUser findByLogin(String username);
+	AppUser findByUsername(String username);
 
 }

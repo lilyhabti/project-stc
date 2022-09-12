@@ -26,4 +26,14 @@ public class Responsable extends AppUser {
 	@OneToMany(mappedBy="responsable")
 //	@JsonIgnore
     private Collection<Activite> activities;
+
+	public Responsable(Long ID_User, String nom, String prenom, String username, String password, String email,
+			String telephone, Collection<AppRole> appRoles, String domaine, String type, String etat,
+			Collection<Activite> activities) {
+		super(ID_User, nom, prenom, username, password, email, telephone, appRoles);
+		this.domaine = domaine;
+		this.type = type;
+		this.etat = etat;
+		this.activities = activities;
+	}
 }

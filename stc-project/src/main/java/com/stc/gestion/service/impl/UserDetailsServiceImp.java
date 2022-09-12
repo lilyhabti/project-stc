@@ -32,7 +32,7 @@ public class UserDetailsServiceImp implements UserDetailsService {
 		appUser.getAppRoles().forEach(r -> {
 			authorities.add(new SimpleGrantedAuthority(r.getRoleName()));
 		});
-		return new User(appUser.getLogin(), appUser.getPassword(), authorities);
+		return new User(appUser.getUsername(), appUser.getPassword(), authorities);
 	}
 
 }

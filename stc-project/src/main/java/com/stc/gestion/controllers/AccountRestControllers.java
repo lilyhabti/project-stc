@@ -266,7 +266,7 @@ public class AccountRestControllers {
 				String username = decodedJWT.getSubject();
 				AppUser appUser = accountService.loadUserByUsername(username);
 				String jwtAccessToken = JWT.create()
-						.withSubject(appUser.getLogin())
+						.withSubject(appUser.getUsername())
 						.withExpiresAt(new Date(System.currentTimeMillis()+JWTUtil.EXPIRE_ACCESS_TOKEN))
 						.withIssuer(request.getRequestURI().toString())
 						.withClaim("roles", appUser.getAppRoles().stream().map(r->r.getRoleName()).collect(Collectors.toList()))

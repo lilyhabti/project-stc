@@ -55,7 +55,7 @@ public class AdministrateurServiceImpl implements StcService<Administrateur, Lon
 		existingAdministrateur.setNom(administrateur.getNom());
 		existingAdministrateur.setPrenom(administrateur.getPrenom());
 		existingAdministrateur.setEmail(administrateur.getEmail());
-		existingAdministrateur.setLogin(administrateur.getLogin());
+		existingAdministrateur.setUsername(administrateur.getUsername());
 		existingAdministrateur.setPassword(administrateur.getPassword());
 		existingAdministrateur.setTelephone(administrateur.getTelephone());
 		existingAdministrateur.setEtat(administrateur.getEtat());
